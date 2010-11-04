@@ -1,14 +1,131 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
 <head>
-  <title>Mccspain</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
-  <%= csrf_meta_tag %>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Content-Script-Type" content="text/javascript">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta name="author" content="Fundació CREAL">
+  <meta name="Copyright" content="CREAL">
+  <meta name="description" content="MCC Spain">
+  <meta name="Keywords" content="">
+
+  <title>MCC Spain</title>
+
+  <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+
+  <link rel="stylesheet" href="stylesheets/style.css" type="text/css" media="all">
+  <link rel="stylesheet" href="stylesheets/print.css" type="text/css" media="print">
+  <link rel="stylesheet" href="stylesheets/mccspain_style.css" type="text/css" media="screen">
+  <!--[if IE]><link rel="stylesheet" href="/media/css/ie.css" type="text/css" media="all"/><![endif]-->
+  <!--[if IE 7]><link rel="stylesheet" href="/media/css/ie7.css" type="text/css" media="all"/><![endif]-->
+  <!--[if lte IE 6]><link rel="stylesheet" href="/media/css/ie6.css" type="text/css" media="all"/><![endif]-->
+  <!--[if IE 8]><link rel="stylesheet" href="/media/css/ie8.css" type="text/css" media="all"/><![endif]-->
+
+  <!-- 
+  <script type="text/javascript" src="mccspain.php_files/jquery-1.js"></script>
+  <script type="text/javascript" src="mccspain.php_files/jquery.js"></script>
+  <script type="text/javascript" src="mccspain.php_files/base.js"></script>
+  -->
+
+  <!-- Png fix -->
+  <!--[if lte IE 6]>
+  <script type="text/javascript" src="/media/js/dd_belatedpng.min.js"></script>
+  <script type="text/javascript">
+	  DD_belatedPNG.fix('img, #iconot, #icoact, div.fancy_bg_e, div.fancy_bg_w, div.fancy_bg_s, div.fancy_bg_n, div.fancy_bg_sw, div.fancy_bg_nw, div.fancy_bg_ne, div.fancy_bg_se');
+  </script>
+  <![endif]-->
 </head>
-<body>
 
-<%= yield %>
+<body id="noticies" class="fitxa">
+	<div id="container_main">
+		<!-- CAPSALERA -->
+		<div id="acc">
+			<ul>						
+				<li><a href="#content_main" accesskey="S">Skip to content</a></li>
+				<li><a href="#nav_main">Skip to main navigation</a></li>
+				<li><a href="#nav_sub">Skip to secondary navigation</a></li>
+			</ul>
+		</div>
+		<hr>
+		<!-- /acc -->
+		<div id="branding">
+		  <table>
+		    <tr>
+		      <td id="logo">
+			      <h1><img src='images/mccspain_logo.jpg'></h1>
+			    </td>
+			    <td id="logo_txt">
+			      <h1>Estudio multi-caso control poblacional, incluyendo tumores de alta incidencia en España</h1>
+			    </td>
+			  </tr>
+			</table>
+			<hr>
+			<div id="eines">
+				<ul id="idiomes">
+					<li><a href="http://www.creal.cat/programes-recerca/projectes-creal/view.php?ID=61&amp;prog=0" title="Versió en Català" hreflang="ca" xml:lang="ca">Català</a></li>
+					<li><a href="http://www.creal.cat/programes-recerca/es_projectes-creal/view.php?ID=61&amp;prog=0" title="Versión en castellano" hreflang="es" xml:lang="es">Castellano</a></li>
+					<li>English</li>
+				</ul>
+			</div>
+		</div>
+		<hr>
+		<!-- /branding -->
+		
+		<!-- / CAPSALERA -->
+		
+		<div id="container_sub">
+			<div id="content_main">
+				<p class="data">National</p>
 
+				<ul id="dades_projecte" class="clearfix">
+					<li class="lidurada"><strong>Duration: </strong><br>2009-2011</li>
+					<li class="licoordinador"><strong>Coordinator: </strong><br> Manolis Kogevinas</li>
+					
+					<li class="lifinancador">
+					  <div id="divfinancadors"><p><strong>Funded by: </strong><br></p>
+					    <div class="text">
+      					<ul>
+                  <li><a class="external" target="_blank" href="http://www.ciberesp.es/" rel="external">CIBERESP</a></li>
+                  <li><a class="external" target="_blank" href="http://www.isciii.es/jsps/organizacion/evaluacion_fomento/convocatorias/Fondo_convocatorias_plantillable.jsp" rel="external">FIS</a></li>
+                </ul>
+              </div>
+            </div>
+          </li>
+				</ul>				
+			  <%= yield %>
+			</div>
+			<!-- /content_main -->
+		</div>
+		<!-- /container_sub -->
+		
+		<div id="content_sub">
+    	<img src="mccspain.php_files/thumb_mcc_spain_logo_editora_49_61_1.jpg">
+			<div class="box">
+			  <ul>
+			    <li><a href="http://www.creal.cat/programes-recerca/en_projectes-creal/view.php?ID=61&amp;SKIN=1&amp;prog=0">Group members</a></li>
+			    <li><a href="http://www.creal.cat/programes-recerca/en_projectes-creal/view.php?ID=61&amp;SKIN=2&amp;prog=0">Publications</a></li>
+  	    </ul>
+  	    <span class="t"></span>
+  	    <span class="b"></span>
+  	  </div>
+			
+			<div class="box contacte">
+			  <h2>CONTACT</h2>
+			  <p><strong>Main investigator: </strong><br>Manolis Kogevinas</p><p><strong>Teléfono: </strong><br>93 214 73 30</p><p><strong>Email: </strong><br><a href="mailto:kogevinas@creal.cat">kogevinas@creal.cat</a></p><span class="t"></span><span class="b"></span><span class="pict"></span>
+  	  </div>
+				
+		</div>
+		<hr>
+		<!-- /content_sub -->
+		<!-- PEU-->
+		<div id="site_info" class="clearfix">
+    	<p class="vcard">
+    	  <span class="fn org">CREAL</span> · <span class="adr"><span class="street-address">Doctor Aiguader, 88</span> · <span class="postal-code">E-08003</span> <span class="locality">Barcelona</span></span> · Tel <span class="tel">+34 93 214 73 00</span> · Fax <span class="fax">+34 93 214 73 02</span> · e-mail: <a href="mailto:info@creal.cat" class="email">info@creal.cat</a> <span class="rss_peu"><a href="http://www.creal.cat/rss.html">RSS</a></span>
+   	  </p>
+    </div>
+    <!-- /site_info -->
+  	<!--  /PEU -->
+	</div>
+	<!-- /container_main -->
 </body>
 </html>
