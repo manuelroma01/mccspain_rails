@@ -1,0 +1,3266 @@
+/*
+CREAL. Centre de Recerca en Epidemiologia Ambiental
+Can Antaviana, 2008
+
+-basic
+-layout
+-vincles
+-branding
+-nav_main
+-nav_sub
+-nav_sub_sub
+-estils houdini
+-notícies
+-sessions
+-recull de premsa
+-galeria
+-taula-persones
+-paginació
+-content_sub
+-site_info
+-portada
+-subportada
+-mapa-web
+-mapa-rss
+-informacio-usuaris
+*/
+
+/*---------------
+Basic
+---------------------------------------------*/
+html {font-size: 100%;} /* WinIE text resize correction */
+body {
+	font-size: 1em;
+	font-family: Verdana, Arial, sans-serif;
+	text-align: center;
+	color: #333;
+	background: #5c9b59 url(images/bg_body.jpg) repeat-x;
+	padding: 0;
+	margin: 0;
+}
+ul,ol,dl,fieldset {margin:0;padding:0;}
+img,abbr,acronym,fieldset {border: none; background: none}
+ul {list-style: none;}
+hr {display: none;}
+
+#noticies #content_main a.img,
+div#container_main a.img {
+	border: none;
+
+}
+#noticies #content_main a.img img,
+div#container_main a.img img{
+	display: block;
+	margin: auto;
+	background:none;
+}
+
+/*Clearfix*/
+.clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+.clearfix {display:inline-block;}
+/* Hide from IE Mac \*/
+	.clearfix {display:block;}
+/* End hide from IE Mac */
+
+/*acc*/
+#acc {
+	position : absolute;
+	top : -9000px;
+	left : -9000px;
+	z-index : 1;
+}
+	#acc a:focus,
+	#acc a:active {
+		position : absolute;
+		top : 9010px;
+		left : 9010px;
+		background : #fff;
+		color : #333;
+		padding : 5px;
+		font-weight : bold;
+		border : 1px solid #600;
+		width : 10em;
+		z-index : 1;
+	}
+
+/*---------------
+Layout
+---------------------------------------------*/
+/*columna dreta*/
+#container_main {
+	/*width: 58.75em;max-width: 95%;min-width: 45em;*/
+	width:940px;
+	margin: 0 auto;
+	background: #fff;
+	text-align: left;
+}
+	#container_sub {
+		width: 100%;
+		float: left;
+		margin-right: -201px;
+		padding: 20px 0 0;
+		background: url(images/bg_content_main.jpg) repeat-x;
+	}
+		#content_main {
+			margin-right: 181px;
+			margin: 20px 221px 0 20px;
+		}
+		div.fitxa_noticia{
+			padding-bottom:20px;
+		}
+	#content_sub {
+		width: 181px;
+		float: right;
+		margin: 100px 20px 0 0;
+	}
+	#content_sub img{
+		padding-bottom: 15px;
+	}
+
+	#site_info {
+		clear: both;
+		background: url(images/bg_site_info.jpg) 0 100% repeat-x;
+		padding-bottom: 2em;
+	}
+
+/*columnes esquerra i dreta*/
+.col_esq #content_main {margin-left: 221px;}
+.tres_col #content_main {margin-left: 221px;}
+#nav_sub_sub {
+	width: 181px;
+	margin-left: 20px;
+	float: left;
+}
+/*columna esquerra*/
+.col_esq #content_main,
+.col_esq #container_sub h2 {margin-right: 20px;}
+/*portada i subportada*/
+#portada #container_sub,
+#sub #container_sub {
+	float: none;
+	margin-right: 0;
+	width: auto;
+}
+	#portada #content_main,
+	#sub #content_main {
+		width: 100%;
+		margin: 0 0 1.125em;
+	}
+
+body.dos_col #content_main img.info{
+	float: left;
+	margin: 0 20px 0 0;
+}
+body.dos_col #content_main h3{
+	display: inline;
+}
+body.dos_col #content_main p {
+	margin-top: 20px;
+}
+
+/*---------------
+Vincles
+---------------------------------------------*/
+/*General*/
+a:link {
+	color: #c60;
+	text-decoration: none;
+	border-bottom: 1px dotted #c60;
+}
+a:visited {
+	color: #666;
+	text-decoration: none;
+	border-bottom: 1px dotted #666;
+}
+a:focus {
+	color: #fff;
+	text-decoration: none;
+	outline: 0;
+	background-color: #c60;
+}
+a:hover {
+	color: #c60;
+	text-decoration: none;
+	border-bottom: 1px solid #c60;
+}
+a:active {
+	color: #fff;
+	text-decoration: none;
+	outline: 0;
+	background-color: #c60;
+}
+img a{
+	background: none;
+	border:0px;
+}
+/*Branding*/
+h1 a:focus span,
+h1 a:active span {
+	outline: 1px dotted #000;
+}
+/*idiomes*/
+#eines ul a:visited {
+	color: #c60;
+	border-bottom-color: #c60;
+}
+#eines ul a:focus,
+#eines ul a:active {
+	color: #fff;
+	background: #c60;
+}
+
+
+/*nav_main*/
+#nav_main a:focus,
+#nav_main a:active {outline: 1px dotted #000;}
+/*nav_sub*/
+#nav_sub a:focus,
+#nav_sub a:active {
+	outline: 1px dotted #ccc;
+	background: none
+}
+/*molladepa*/
+#molladepa a:link,
+#molladepa a:visited {
+	border-bottom: none;
+	color: #c60;
+}
+#molladepa a:focus,
+#molladepa a:active {color: #fff;}
+#molladepa a:hover {border-bottom: 1px dotted #c60;}
+
+/*Vincles externs*/
+a:link.external,
+a:visited.external {
+	background-image: url(images/icon_link_ext.gif);
+	background-position: right 50%;
+	background-repeat: no-repeat;
+	padding-right: 14px;
+}
+a:focus.external,
+a:focus.active {
+	background-image: url(images/icon_link_ext2.gif);
+	background-position: right 50%;
+	background-repeat: no-repeat;
+	padding-right: 14px;
+}
+/*Vincles externs .informe_impacte */
+.informe_impacte a:link.external,
+.informe_impacte a:visited.external {
+	background-image: url(images/icon_link_ext.gif) !important;
+	background-position: right 50% !important;
+	background-repeat: no-repeat !important;
+	padding-right: 14px;
+}
+.informe_impacte a:focus.external,
+.informe_impacte a:focus.active {
+	background-image: url(images/icon_link_ext2.gif);
+	background-position: right 50%;
+	background-repeat: no-repeat;
+	padding-right: 14px;
+}
+/*Vincles externs IMATGES */
+#content_sub a:link.external,
+#content_sub a:visited.external{
+	background-image: none;
+	padding-right: 0px;
+}
+#content_sub a:focus.external,
+#content_sub a:focus.active{
+	background-image: none;
+	padding-right: 0px;
+}
+
+/*site_info*/
+#site_info ul#altres a:link,
+#site_info ul#altres a:visited {border: none;}
+#site_info ul#altres a:hover {border-bottom: 1px dotted #fff;}
+#site_info ul a:focus,
+#site_info ul a:active {
+	background: none;
+	outline: 1px dotted #000;
+}
+
+
+
+/*---------------
+Branding
+---------------------------------------------*/
+#branding {
+	background: url(images/bg_branding.jpg) no-repeat;
+	position: relative;
+	height:107px;
+}
+	/*logo*/
+	h1 {
+		margin: 0;
+		padding: 0 0 0 20px;
+		width: 233px;
+		height: 107px;
+		position: relative;
+		font-size: 1em;
+		background: #fff;
+	}
+		h1 a {
+			color: #000;
+			text-decoration: none;
+			font-weight: normal;
+			height: 107px;
+			padding:0px;
+			margin:0px;
+		}
+
+		h1 span, h1.es span, h1.en span {
+			display: block;
+			position: absolute;
+			left: 0;
+			top: 0;
+			width: 100%;
+			height: 107px;
+			cursor: pointer;
+			padding:0px;
+			margin:0px;
+
+		}
+		h1 span {
+			background: url(images/creal_logo.jpg) no-repeat;
+			width:291px;
+		}
+		h1.es span {
+			background: url(images/creal_logo_es.jpg) no-repeat;
+			width:291px;
+		}
+		h1.en span {
+			background: url(images/creal_logo_en.jpg) no-repeat;
+			width:291px;
+		}
+/*idiomes*/
+#branding ul {
+	position: absolute;
+	top: 12px;
+	right: 20px;
+}
+	#branding ul li {
+		background: url(images/kland_fletxaverda.gif) 0 50% no-repeat;
+		font-size: .6875em;
+		padding-left: 10px;
+		margin: 0 0 .25em;
+	}
+/*cercador*/
+.cerca-ressaltat {
+	background: #C9E3BC;
+	font-weight: bold;
+}
+#branding form {
+	width: 13.130em;
+	position: absolute;
+	top: 4em;
+	right: 20px;
+}
+	#branding form legend {display: none;}
+	#branding form label {
+		display: block;
+		font-size: .6875em;
+	}
+	#branding form input {
+		background: url(images/bg_input_cercador.jpg) no-repeat;
+		width: 164px;
+		height: 17px;
+		padding: 3px 8px 0;
+		border: none;
+		font-size: .6875em;
+		color: #666;
+	}
+	#branding form input.bt {
+		background: none;
+		width: auto;
+		height: auto;
+		padding: 0;
+		vertical-align: middle;
+		position: relative;
+		top: 1px;
+	}
+
+/*---------------
+nav_main
+---------------------------------------------*/
+ul#nav_main {
+	background: #e96508;
+	padding-left: 1em;
+	padding-bottom: .4375em;
+}
+	ul#nav_main li {display: inline;}
+		ul#nav_main li a {
+			display: block;
+			float: left;
+			font-size: .9375em;
+			color: #fbe3d2;
+			border-bottom: none;
+			padding: .2em 1em 13px;
+			margin: .7em 0 0;
+			background: url(images/filet_nav.gif) 100% 0 no-repeat;
+		}
+			ul#nav_main li.prev a {background: none;}
+			ul#nav_main li.current a {
+				color: #fff;
+				background: #000 url(images/bg_nav_main_current.gif) 50% 100% no-repeat;
+			}
+			ul#nav_main li a:hover {color: #fff;}
+
+/*---------------
+nav_sub
+---------------------------------------------*/
+ul.nav_sub {
+	background: #4b4b4b url(images/bg_nav_sub.jpg) repeat-x;
+	padding-left: .3500em;
+	padding-bottom: .563em;
+}
+	ul.nav_sub li {display: inline;}
+		ul.nav_sub li a {
+			display: block;
+			float: left;
+			font-size: .8125em;
+			border-left: 1px solid #fff;
+			border-bottom: none;
+			padding: .1em 0.9em;
+			margin: .75em 0 0;
+		}
+			ul.nav_sub li a:link,
+			ul.nav_sub li a:visited {
+				color: #fff;
+				border-bottom: none;
+			}
+			ul.nav_sub li.current a,
+			ul.nav_sub li a:hover {
+				background: url(images/kland_select_submenu.gif) 0 50% no-repeat;
+				border-bottom: none;
+			}
+			ul.nav_sub li.current a {
+				font-weight: bold;
+				color: #e96508;
+			}
+
+/*---------------
+nav_sub_sub
+---------------------------------------------*/
+#nav_sub_sub ul.menu {
+	background: #7ab32e;
+	position: relative;
+	margin: 0 0 1.125em;
+	padding: 6px 1em 7px;
+}
+	#nav_sub_sub ul.menu span {
+		position: absolute;
+		display: block;
+		width: 181px;
+	}
+		#nav_sub_sub ul.menu span.t {
+			left: 0;
+			top: 0;
+			height: 6px;
+			background: url(images/menu_lateral_t.gif) no-repeat;
+		}
+		#nav_sub_sub ul.menu span.b {
+			left: 0;
+			bottom: 0;
+			height: 7px;
+			background: url(images/menu_lateral_b.gif) 0 100% no-repeat;
+		}
+	#nav_sub_sub ul.menu li {display: inline;}
+		#nav_sub_sub ul.menu li a {
+			display: block;
+			font-size: .8125em;
+			background: url(images/menu_lateral_kland.png) 5px 1.1em no-repeat;
+			padding: 8px 0 10px 18px;
+			margin-top: 0;
+			border: none;
+			position: relative;
+			float: none;
+		}
+			#nav_sub_sub ul.menu li a:link,
+			#nav_sub_sub ul.menu li a:visited {color: #fff;}
+			#nav_sub_sub ul.menu li a:hover,
+			#nav_sub_sub ul.menu li a:focus,
+			#nav_sub_sub ul.menu li.current a {background-color: #629024;}
+			#nav_sub_sub ul.menu li a:active {background-color: #3d5a17;}
+			#nav_sub_sub ul.menu span.separador {
+				left: 0;
+				bottom: 0;
+				width: 149px;
+				height: 2px;
+				background: url(images/menu_lateral_separa.gif) 0 100% repeat-x;
+			}
+		/*submenú*/
+		#nav_sub_sub ul.menu li.current ul li a {
+			padding-left: 30px;
+			background-color: #81bf2f;
+			background-position: 18px 1.1em;
+		}
+			#nav_sub_sub ul.menu li.current ul li.current a {background-color: #629024;}
+
+/*---------------
+Estils Houdini
+---------------------------------------------*/
+/*títols*/
+#container_sub h2 {
+	margin: 0 20px .72em 20px;
+	padding-bottom: .32em;
+	font-size: 16px;
+	color: #6ba743;
+	text-transform: uppercase;
+	font-weight: bold;
+	font-family: Arial, Verdana, sans-serif;
+	border-bottom: 1px dotted #666;
+}
+	/* Pàgines amb els titols de colors, i fils d'ariadna */
+
+	#container_sub span.respira,
+	#container_sub span.radiacions,
+	#container_sub span.programes,
+	#container_sub span.infancia,
+	#container_sub span.contamina_aigua,
+	#container_sub span.contamina,
+	#container_sub span.cancer,
+	#container_sub span.benvinguda,
+	#container_sub span.quefem,
+	#container_sub span.quisom,
+	#container_sub span.organs,
+	#container_sub span.publi,
+	#container_sub span.colabora{
+		padding-top: 10px;
+		padding-bottom: 8px;
+		padding-right: 130px;
+	}
+
+		#container_sub span.cancer{
+			background: url(images/ico_cancer.jpg) no-repeat;
+			background-position:right 0;
+		}
+
+		#container_sub span.contamina{
+			background: url(images/ico_contamina.jpg) no-repeat;
+			background-position:right 0;
+		}
+
+		#container_sub span.contamina_aigua{
+			background: url(images/ico_contamina_aigua.jpg) no-repeat;
+			background-position:right 0;
+		}
+
+		#container_sub span.infancia{
+			background: url(images/ico_infancia.jpg) no-repeat;
+			background-position:right 0;
+		}
+
+		#container_sub span.programes{
+			background: url(images/ico_programes.jpg) no-repeat;
+			background-position:right 0;
+		}
+
+		#container_sub span.radiacions{
+			background: url(images/ico_radiacions.jpg) no-repeat;
+			background-position:right 0;
+		}
+
+		#container_sub span.respira{
+			background: url(images/ico_respira.jpg) no-repeat;
+			background-position:right 0;
+		}
+
+		#container_sub span.colabora{
+			background: url(images/ico_colabora.jpg) no-repeat;
+			background-position:right 0;
+		}
+
+		#container_sub span.publi{
+			background: url(images/ico_publica.jpg) no-repeat;
+			background-position:right 0;
+		}
+
+		#container_sub span.organs{
+			background: url(images/ico_organs.jpg) no-repeat;
+			background-position:right 0;
+		}
+
+		#container_sub span.quisom{
+			background: url(images/ico_quisom.jpg) no-repeat;
+			background-position:right 0;
+		}
+
+		#container_sub span.quefem{
+			background: url(images/ico_quefem.jpg) no-repeat;
+			background-position:right 0;
+		}
+		#container_sub span.benvinguda{
+			background: url(images/ico_benvinguda.jpg) no-repeat;
+			background-position:right 0;
+		}
+
+	#container_sub h2.respira,
+	#container_sub h2.radiacions,
+	#container_sub h2.programes,
+	#container_sub h2.infancia,
+	#container_sub h2.contamina_aigua,
+	#container_sub h2.contamina,
+	#container_sub h2.cancer,
+	#container_sub h2.colabora,
+	#container_sub h2.publi,
+	#container_sub h2.benvinguda,
+	#container_sub h2.quefem,
+	#container_sub h2.quisom,
+	#container_sub h2.organs{
+		height: 22px;
+		margin: 0px 0px 0px 20px;
+		padding-top: 10px;
+		border-top: 1px solid #cccccc;;
+	}
+
+	p#molladeparespira,
+	p#molladeparadiacions,
+	p#molladepaprogrames,
+	p#molladepainfancia,
+	p#molladepacontamina_aigua,
+	p#molladepacontamina,
+	p#molladepacancer,
+	p#molladepacolabora,
+	p#molladepabenvinguda,
+	p#molladepapubli,
+	p#molladepaorgans,
+	p#molladepaquisom,
+	p#molladepaquefem {
+		padding-bottom: 0.5em;
+		font-size: 0.6875em;
+		margin-top: 0pt;
+		margin-left: 20px;
+		margin-bottom: 0em;
+		line-height: 1.5em;
+	}
+
+
+#content_main h3 {
+	font-size: 14px;
+	margin: 0 0 1em 0;
+	color: #333;
+	background: url(images/kland_h3.gif) 0 50% no-repeat;
+	padding-left: 12px;
+	font-family: Arial, Verdana, sans-serif;
+}
+body.col_esq #content_main h3 {
+	background: none;
+	color: #6ba743;
+	padding-left: 0;
+}
+#content_main h4 {
+	font-size: .875em;
+	margin: 0 0 1.286em 0;
+	padding: .5em .8em;
+	color: #333;
+	background: #e0e0e0;
+	font-family: Arial, Verdana, sans-serif;
+}
+#content_main h5 {
+	font-size: .75em;
+	margin: 0 0 1.5em 0;
+	padding-left: 12px;
+	color: #333;
+	background: url(images/kland_h5.gif) 0 50% no-repeat;
+	font-family: Arial, Verdana, sans-serif;
+}
+#content_main h6 {
+	font-size: .75em;
+	margin: 0 0 1.5em 0;
+	color: #333;
+	font-family: Arial, Verdana, sans-serif;
+}
+#content_main div.direccio h3 {
+	background: none;
+	color: #6BA743;
+	font-size: 0.90em;
+	margin: 10px 0;
+}
+#content_main div.direccio ul.duesCol {overflow: auto;}
+	#content_main div.direccio ul.duesCol li {
+		background: #e0e0e0;
+		padding: 5px;
+	}
+
+/*text*/
+#content_main p,
+p#molladepa {
+	/*font-size: .75em;*/
+	font-size: 0.6875em;
+	margin: 0 0 1.5em 0;
+	line-height: 1.5em;
+}
+p#molladepa {
+	border-bottom: 1px solid #ccc;
+	padding-bottom: .5em;
+	margin: 0 20px 1.125em;
+}
+p.linia {
+	padding-bottom: 1.5em;
+	border-bottom: 1px dotted #666;
+}
+p.primer {
+	background: url(images/kland_p.gif) 0 .5em no-repeat;
+	padding-left: 18px;
+}
+
+/*Llistes*/
+body.fitxa #container_sub #content_main ul, #content_main ul,
+#content_main ol {
+	font-size: .75em;
+	font-size: 11px;
+	margin: 0 0 0.5em 1em;
+	line-height: 1.5em;
+}
+	#content_main ul ul,
+	#content_main ol ol {
+		font-size: 1em;
+		margin: .5em 0 0 0;
+	}
+		#content_main ul ul ul,
+		#content_main ol ol ol {font-size: .916em;}
+
+	/*Llista ordenada*/
+	#content_main ol {padding-left: 1.8em;}
+
+	/*Llista desordenada*/
+	body.fitxa #container_sub #content_main ul li,
+	#content_main ul li {
+		background: url(images/llistat_nivell_1.gif) 0px 5px no-repeat;
+		padding-left: 13px;
+		margin: 0 0 .5em;
+	}
+		#content_main ul li li {
+			background: url(images/llistat_nivell_2.gif) 0 6px no-repeat;
+			padding-left: 10px;
+		}
+			#content_main ul li li li {
+				background: url(images/llistat_nivell_3.gif) 0 4px no-repeat;
+				color: #666;
+			}
+
+	/*Llistat amb imatge, títol i text*/
+	#content_main ul.logos {
+		margin-left: 0;
+		width:90%;
+		display:block;
+	}
+	#content_main ul.logos li {
+		background: none;
+		padding: 0 7.5em 0 16.5em;
+		position: relative;
+		margin: 0 0;
+		width:80%;
+		float:left;
+		min-height:70px;
+
+	}
+		#content_main ul.logos li img {
+		/*
+			float:left;
+			width: 150px;
+			margin-bottom: 60px;
+			padding-bottom: 5px;
+			background: none;
+			border: 0px;
+			padding-top:10px;
+			padding-right:25px;
+			*/
+			position: absolute;
+			top: 1em;
+			left: 0;
+			width: 150px;
+
+
+		}
+		#content_main ul.logos li a.external
+		{
+			background-image: none;
+			border-bottom: 0px;
+
+	padding-right: 0;
+		}
+
+		#content_main  ul.logos li p.TextLogo {
+			padding-left:170px;
+			font-size: 12px;
+			width: 400px;
+			padding-top: 0px;
+			margin-top:0px;
+		}
+
+	/*Llistat amb imatge, títol i text destacat*/
+	#content_main ul.opinions {
+		margin-left: 0;
+		display:block;
+	}
+	#content_main ul.opinions li{
+		background: none;
+		padding: 10px;
+		position: relative;
+		border-bottom: 1px dotted #666;
+		font-size: 13px;
+		width: 100%;
+		margin-bottom: 10px;
+	}
+
+
+	#content_main ul.opinions li img {
+			float:left;
+			clear:left;
+			padding-left:10px;
+		}
+
+		#content_main ul.opinions li h3
+		{
+			float:left;
+			clear:both;
+			background: none;
+			padding: 0px 0 0 10px;
+			display: block;
+		}
+
+		#content_main ul.opinions li p {
+			float:right;
+			padding: 30px 0 0 270px;
+			display: block;
+			font-size:13px;
+		}
+
+		#content_main ul.opinions li span
+		{
+			display: block;
+			position: absolute;
+		}
+
+		#content_main ul.opinions li span.tl {
+			background: url(images/dest_d_tl.jpg) no-repeat;
+			width: 32px;
+			height: 25px;
+			left: 240px;
+			top: 30px;
+
+		}
+
+		#content_main ul.opinions li span.br {
+			background: url(images/dest_d_br.jpg) no-repeat;
+			width: 32px;
+			height: 25px;
+			right: -15px;
+			bottom: 20px;
+		}
+
+
+
+	/*Llistat amb fons*/
+	#content_main ul.fons {
+			background-color: #ebebeb;
+			margin: 0 0 1.125em 0;
+		}
+		#content_main ul.fons li {
+			background-position: 8px 9px;
+			padding: .5em 0 .5em 25px;
+			margin: 0;
+		}
+			#content_main ul.fons li li {
+				margin: 0;
+				padding: 0 0 0 10px;
+				background-position: 0 5px;
+				border: none;
+			}
+
+	/*Llistat a dues columnes*/
+	#content_main ul.duesCol {margin-left: 0;}
+		#content_main ul.duesCol li {
+			width: 249px;
+			margin-right: 10px;
+			padding-left: 13px;
+			float: left;
+		}
+
+	/*Llista tipus A*/
+	#content_main ul.tipusA li {
+			border-bottom: 1px dotted #666;
+			padding-top: .5em;
+			padding-bottom: .5em;
+			margin: 0;
+			background-position: 0 10px;
+		}
+	/*Llista tipus B i llista_caixa*/
+	#content_main ul.tipusB,
+	#content_main ul.llista_caixa {margin-left: 0;}
+		#content_main ul.tipusB li,
+		#content_main ul.llista_caixa li {
+			background-color: #e0e0e0;
+			background-position: 8px 10px;
+			padding: .5em 2.1em;
+			margin: 0;
+			border-bottom: 1px dotted #666;
+		}
+		/* tipusB noticies */
+		#noticies #content_main ul.tipusB {
+			margin-bottom: 30px;
+		}
+		#noticies #content_main ul.tipusB li{
+			background-image: url(images/llistat_nivell_1.gif);
+			background-position:  10px 15px;
+			background-repeat: no-repeat;
+			padding-left: 25px;
+			font-size: 0.75em;
+		}
+		/* fi tipusB noticies */
+			#content_main ul.tipusB li:last-child,
+			#content_main ul.llista_caixa li:last-child {border: none;}
+	/*Llista caixa*/
+	#content_main ul.llista_caixa li.caixaTitol {
+		background: #e96508;
+		color: #fff;
+		font-weight: bold;
+	}
+
+/*Text + imatge*/
+/*esquerra*/
+.txtImgEsq img {
+	float: left;
+	margin: 0 15px 15px 0;
+}
+/*#content_main .txtImgEsq p {margin-left: 15em;}
+#content_main .txtImgEsq p.txtImgEsqCont {margin-left: 0;}*/
+/*dreta*/
+.txtImgDr img {
+	float: right;
+	margin: 0 0 15px 15px;
+}
+/*#content_main .txtImgDr p {margin-right: 15em;}
+#content_main .txtImgDr p.txtImgDrCont {margin-right: 0;}*/
+
+/*llistes i paràgraf continuació */
+#content_main .txtImgEsq .txtImgEsqCont {
+	margin-left: 175px;
+}
+#content_main .txtImgDr .txtImgDrCont {
+	margin-right: 175px;
+}
+
+/*Text destacat*/
+.destacat {
+	margin: 0 0 1.125em 0;
+	position: relative;
+	border: 1px dotted #666;
+	border-width: 1px 0;
+}
+	#content_main .destacat {
+		margin: 20px 0;
+		padding: 15px 65px;
+		font-size: 13.5px;
+	}
+	#content_main .destacat span {
+		display: block;
+		position: absolute;
+	}
+		#content_main .destacat span.ombra {
+			width: 100%;
+			height: 11px;
+			background: url(images/dest_ombra.jpg) 50% 0 no-repeat;
+			left: 0;
+			bottom: -12px;
+		}
+		#content_main .destacat span.tl {
+			background: url(images/dest_d_tl.jpg) no-repeat;
+			width: 32px;
+			height: 25px;
+			left: 24px;
+			top: 19px;
+
+		}
+		#content_main .destacat span.br {
+			background: url(images/dest_d_br.jpg) no-repeat;
+			width: 32px;
+			height: 25px;
+			right: 19px;
+			bottom: 20px;
+		}
+
+
+
+			/*tipus A
+			#content_main div.a span.tl {background-image: url(images/dest_a_tl.jpg);}
+			#content_main div.a span.br {background-image: url(images/dest_a_br.jpg);}*/
+			/*tipus B
+			#content_main div.b {background: #fbe1cf;}
+			#content_main div.b span.tl {background-image: url(images/dest_b_tl.jpg);}
+			#content_main div.b span.br {background-image: url(images/dest_b_br.jpg);}*/
+			/*tipus C
+			#content_main div.c {background: #dfebde;}
+			#content_main div.c span.tl {background-image: url(images/dest_c_tl.jpg);}
+			#content_main div.c span.br {background-image: url(images/dest_c_br.jpg);}*/
+
+
+/*taula*/
+#content_main table {
+	margin: 0 0 1.125em;
+	border-collapse: collapse;
+	border-spacing: .4em;
+	width: 100%;
+}
+	#content_main table caption {
+		display: none;
+	}
+	#content_main table thead th {
+		font-size: .625em;
+		font-weight: bold;
+		text-transform: uppercase;
+		background: #e0e0e0;
+		padding: 1em;
+		border: 6px solid #fff;
+		border-width: 0 6px 8px 0;
+	}
+		#content_main table thead th.data {
+			background: #e0e0e0 url(images/ico_data.gif) 7px 50% no-repeat;
+			padding-left: 30px;
+		}
+		#content_main table tbody th{
+			padding: 1em;
+		}
+		#content_main table tbody th,
+		#content_main table tbody td {
+			font-size: .6875em;
+			padding: .6em;
+			vertical-align: top;
+			border-bottom: 1px solid #ccc;
+			font-weight: normal;
+			text-align: left;
+		}
+			#content_main table tbody td.summary,
+			#content_main table tbody td.summary p {
+				/*font-weight: bold;*/
+				/*font-size: .75em;*/
+				font-size: 11px;
+				padding: 0.6em 0 0 0;
+			}
+			#content_main table tbody td.summary p {
+				margin:0;
+				padding:0;
+			}
+
+/*---------------
+notícies
+---------------------------------------------*/
+#noticies #content_main ul {
+	margin-left: 0;
+	margin-bottom: 0;
+	font-size: 1em;
+}
+	#noticies #content_main ul li {
+		background-image: none;
+		padding-left: 0;
+		padding-bottom: 5px;
+		/* padding-top: 2.05em; */
+		/*margin: 0 0 1.5em;*/
+		border-bottom: 1px dotted #666;
+		position: relative;
+	}
+		#noticies.fitxa #content_main ul li {
+			border: 0;
+		}
+		/*#noticies.fitxa #container_main #container_sub h2 {
+			margin-right: 20px;
+			width: 699px;
+		}*/
+		/*#publicacions #container_main #container_sub h2 span,*/
+		#noticies.fitxa #container_main #container_sub h2 span {
+			background: url(images/kland_esq.gif) no-repeat;
+			background-position: 0 6px;
+			padding-left: 15px;
+			float: right;
+			font-size: 11px;
+			color: #c60;
+			font-weight: bold;
+			/*text-transform: lowercase;*/
+			text-transform: none;
+		}
+		#noticies.fitxa #container_main #container_sub h2 span a:hover,
+		#noticies.fitxa #container_main #container_sub h2 span a {
+			color: #c60;
+		}
+		#noticies.fitxa #container_main #container_sub h2 span a:focus,
+		#noticies.fitxa #container_main #container_sub h2 span a:active {
+			color: #fff;
+		}
+		#noticies.fitxa .img_center {
+			margin-bottom: 20px;
+			text-align: center;
+		}
+		#noticies.fitxa .img_esq {
+			padding-top:10px;
+		}
+
+		#noticies #content_main ul li:last-child {border-bottom: none;}
+		#noticies #content_main h3 {
+			font-size: 1em;
+			line-height: 1.25em;
+			margin: 0 0 .45em;
+			font-weight: bold;
+			background: none;
+			padding: 0;
+		}
+			#noticies #content_main h3 a:link {
+				color: #000;
+				border-bottom-color: #000;
+			}
+			#noticies #content_main h3 a:focus,
+			#noticies #content_main h3 a:active {
+				color: #fff;
+				border-bottom: none;
+				background: #c60;
+			}
+		#noticies #content_main p {font-size: .75em;}
+			#noticies #content_main p.data {
+				/* position: absolute; */
+				top: 0;
+				left: 0;
+				font-size: 0.8em;
+				color: #6ba743;
+				margin-bottom: 10px;
+			}
+			#noticies #content_main p.lloc {
+				/* position: absolute; */
+				top: 0;
+				left: 0;
+				font-size: 0.8em;
+				/*color: #6ba743;*/
+				margin-bottom: 10px;
+				border-top: 1px solid #000;
+				border-bottom: 1px solid #000;
+				padding-top: 10px;
+				padding-bottom: 10px;
+			}
+			#noticies #content_main p.entradeta {
+				font-size: 13px;
+				margin: 0 0 0.286em;
+			}
+			#noticies #content_main img {
+				float: left;
+				margin: 0px 1.5em 0em 0;
+				padding: 0;
+			}
+/*noticies fitxa*/
+#noticies.fitxa #content_main p.data {
+	/* position: static; */
+	margin: 0 0 .5625em;
+}
+#noticies.fitxa #content_main p,
+#noticies #content_main p {
+	font-size: 11px;
+}
+		div.informe_impacte li {
+			margin-bottom: .5em;
+			background-repeat: no-repeat;
+		}
+		div.informe_impacte li.noticia{padding-top: 1em;border-bottom: 1px dotted #333 !important;}
+		div.informe_impacte li.audio {background-image: url(images/ico_audio_impacte.gif) !important;}
+		div.informe_impacte li.doc {background-image: url(images/ico_doc_impacte.gif) !important;}
+		div.informe_impacte li.web {background-image: url(images/ico_web.gif) !important;}
+		div.informe_impacte li.video {background-image: url(images/ico_video_impacte.gif) !important;}
+		div.informe_impacte li.altres {background-image: url(images/ico_clips.png) !important;}
+		div.informe_impacte p.data {
+			font-size: 1em !important;
+			position: absolute;
+			top: .5em;
+			left: 0;
+			padding-left: 32px;
+			font-weight:normal !important;
+		}
+		div.informe_impacte h3 {
+			margin:0 !important;padding:0 !important;
+			font-size: 1.2em !important;
+			margin-left: 20px !important;
+		}
+			div.informe_impacte h3 a{
+				border:none !important;
+			}
+			div.informe_impacte h3 a:hover{
+				border-bottom: 1px dotted #333 !important;
+			}
+/*---------------
+sessions
+---------------------------------------------*/
+/*fitxa ponent*/
+#ponent {
+	background: #e0e0e0;
+	text-align: left;
+	padding: 0;
+	position: relative;
+}
+	#ponent p#tanca {
+		position: absolute;
+		right: 20px;
+		top: -20px;
+		margin: 0;
+		padding: 0;
+	}
+		#ponent p#tanca a {
+			border: none;
+			background: none;
+		}
+	#ponent #container {
+		background: #e0e0e0 url(images/bg_fitxa_ponent.gif) repeat-y;
+		overflow: hidden;
+		float: none;
+		margin: 2em 1em 1em;
+		padding: 0;
+	}
+		#ponent .vcard {
+			float: left;
+			width: 175px;
+			padding: 0 28px 0 0;
+			margin: 0 28px 0 0;
+		}
+			#ponent h1 {
+				background: none;
+				width: auto;
+				height: auto;
+				padding: 0;
+				margin: 0 0 1em;
+				font-size: .625em;
+				text-transform: uppercase;
+			}
+			#ponent h2 {
+				font-size: 1.125em;
+				color: #000;
+				font-weight: bold;
+				margin: 0 0 .25em;
+			}
+			#ponent .vcard p {
+				font-size: .6875em;
+				margin: 0 0 .5em;
+			}
+				#ponent .vcard p a.email {
+					font-size: 1.091em;
+				}
+		#ponent div#text {
+			float: left;
+			width: 375px;
+			margin: 0;
+		}
+			#ponent div p {
+				font-size: .75em;
+				margin: 0 0 1.125em;
+			}
+		#ponent p#back {
+			font-size: .75em;
+			margin: 1.333em;
+		}
+
+/*---------------
+paginació classe
+---------------------------------------------*/
+
+.navegacioPagines {
+	border-top: 1px #ccc solid;
+	float: left;
+	padding-bottom: 1em;
+	padding-top: 20px;
+	width: 100%;
+	font-size: 11px;
+	margin-top: 20px;
+	vertical-align: middle;
+}
+.navegacioPagines p {
+	margin: 0;
+	margin-top: 0;
+}
+.navegacioPagines p#pag {
+	float: left;
+	background: url('images/pagina.gif') 0 50% no-repeat;
+	margin: 0 1em 0 0;
+	padding-left: 15px;
+	font-size: 1em;
+	color: #333;
+}
+	.navegacioPagines p#pag strong {
+		color: #333;
+	}
+.navegacioPagines p#pag2 {
+	float: left;
+	background: url('images/pagina.gif') 0 50% no-repeat;
+	margin: 0 1em 0 0;
+	padding-left: 15px;
+	font-size: 1em;
+	color: #333;
+}
+	.navegacioPagines p#pag2 strong {
+		color: #333;
+	}
+.navegacioPagines a.anterior,
+.navegacioPagines a.seguent {
+	font-size: 11px;
+	font-weight: bold;
+}
+	.navegacioPagines a.anterior {
+		background: url('images/pag_anterior.gif') 0 50% no-repeat;
+		padding-left: 20px;
+		float: left;
+		margin-right: 3em;
+		border: none;
+		height: 17px;
+	}
+	.navegacioPagines a.seguent {
+		background: url('images/pag_seguent.gif') 100% 50% no-repeat;
+		padding-right: 20px;
+		float: right;
+		border: none;
+		height: 17px;
+	}
+content_main .navegacioPagines ul {
+		float: left;
+		width: 37em;
+		margin: 0;
+		font-weight: bold;
+		margin-top: -5px;
+	}
+		 #container_sub #content_main .navegacioPagines ul li {
+			background: none;
+			float: left;
+			font-size: 1em;
+			color: #333;
+			background-color: inherit;
+			text-align: center;
+			padding-top: 0em;
+			border-bottom: none;
+		}
+		#container_sub #content_main .navegacioPagines li.actual {
+			font-weight: bold;
+			margin: 0 .5em 0 0;
+				border: 1px solid #999;
+				width: 1.2em;
+				padding: .3em;
+				display: block;
+		}
+
+			#container_sub #content_main .navegacioPagines li a{
+				font-weight: normal;
+				margin: 0 .5em 0 0;
+				border: 1px solid #999;
+				width: 1.2em;
+				padding: .3em;
+				display: block;
+			}
+			#container_sub #content_main .navegacioPagines li.mes a {
+				border: none;
+			}
+
+
+/*---------------
+paginació
+---------------------------------------------*/
+
+#navegacioPagines {
+	border-top: 1px #ccc solid;
+	float: left;
+	padding-bottom: 1em;
+	padding-top: 20px;
+	width: 100%;
+	font-size: 11px;
+	margin-top: 20px;
+}
+#navegacioPagines p {
+	margin: 0;
+	margin-top: 0;
+}
+#navegacioPagines p#pag {
+	float: left;
+	background: url('images/pagina.gif') 0 50% no-repeat;
+	margin: 0 1em 0 0;
+	padding-left: 15px;
+	font-size: 1em;
+	color: #333;
+}
+	#navegacioPagines p#pag strong {
+		color: #333;
+	}
+#navegacioPagines p#pag2 {
+	float: left;
+	background: url('images/pagina.gif') 0 50% no-repeat;
+	margin: 0 1em 0 0;
+	padding-left: 15px;
+	font-size: 1em;
+	color: #333;
+}
+	#navegacioPagines p#pag2 strong {
+		color: #333;
+	}
+#navegacioPagines a.anterior,
+#navegacioPagines a.seguent {
+	font-size: 11px;
+	font-weight: bold;
+}
+	#navegacioPagines a.anterior {
+		background: url('images/pag_anterior.gif') 0 50% no-repeat;
+		padding-left: 20px;
+		float: left;
+		margin-right: 3em;
+		border: none;
+		height: 17px;
+	}
+	#navegacioPagines a.seguent {
+		background: url('images/pag_seguent.gif') 100% 50% no-repeat;
+		padding-right: 20px;
+		float: right;
+		border: none;
+		height: 17px;
+	}
+#content_main #navegacioPagines ul {
+		float: left;
+		width: 37em;
+		margin: 0;
+		font-weight: bold;
+		margin-top: -5px;
+	}
+		 #container_sub #content_main #navegacioPagines ul li {
+			background: none;
+			float: left;
+			font-size: 1em;
+			color: #333;
+			background-color: inherit;
+			text-align: center;
+			padding-top: 0em;
+			border-bottom: none;
+		}
+		#container_sub #content_main #navegacioPagines li.actual {
+			font-weight: bold;
+			margin: 0 .5em 0 0;
+				border: 1px solid #999;
+				width: 1.2em;
+				padding: .3em;
+				display: block;
+		}
+
+			#container_sub #content_main #navegacioPagines li a{
+				font-weight: normal;
+				margin: 0 .5em 0 0;
+				border: 1px solid #999;
+				width: 1.2em;
+				padding: .3em;
+				display: block;
+			}
+			#container_sub #content_main #navegacioPagines li.mes a {
+				border: none;
+			}
+
+
+/*---------------
+recull de premsa
+---------------------------------------------*/
+.premsa #container_sub #content_main li {
+	padding-top: 2.5em;
+	background-repeat: no-repeat;
+}
+	.premsa #container_sub #content_main li.audio {background-image: url(images/ico_audio.gif); padding-left:32px;}
+	.premsa #container_sub #content_main li.doc {background-image: url(images/ico_doc.gif); padding-left:32px;}
+	.premsa #container_sub #content_main li.web {background-image: url(images/ico_web.gif); padding-left:32px;}
+	.premsa #container_sub #content_main li.video {background-image: url(images/ico_video.gif); padding-left:32px;}
+	.premsa #container_sub #content_main li.altres {background-image: url(images/ico_clips.png); padding-left:32px;}
+
+	.premsa #container_sub #content_main h3 {margin: 0 0 1em 0;}
+	.premsa #container_sub #content_main h3 a:link,
+	.premsa #container_sub #content_main h3 a:visited {border: none;}
+	.premsa #container_sub #content_main h3 a:hover {border-bottom: 1px dotted #000;}
+.premsa #container_sub #content_main p.data {
+	font-size: .875em;
+	position: absolute;
+	top: .5em;
+	left: 0;
+	padding-left: 32px;
+}
+
+/*---------------
+galeria
+---------------------------------------------
+#galeria #content_main h3 {
+	background: none;
+	padding: 0;
+	color: #6ba743;
+}
+#galeria #content_main div {
+	background: url(images/bg_cac.jpg) repeat-y;
+	padding: 0 0 3px;
+	margin: 0 0 1.125em;
+}
+	#galeria #content_main div img {
+		float: left;
+		margin: 0 18px 0 0;
+	}
+	#galeria #content_main div h4 {
+		background: none;
+		padding: 9px 9px 0 0;
+		margin: 0 0 5px 12px;
+		color: #c60;
+		font-weight: normal;
+	}
+	#galeria #content_main div p {margin: 0 12px .5em 12px;}
+	#galeria #content_main div div {
+		background: none;
+		margin: 0;
+		padding: 0;
+	}
+#galeria #content_main ul {margin-left: 0;}
+	#galeria #content_main ul li {
+		padding: 0;
+		margin: 0 2% 1.5em 0;
+		width: 46%;
+		float: left;
+		background: url(images/bg_cac.jpg) repeat-y;
+		position: relative;
+		min-height: 124px;
+		height: auto !important; /*IE6 min-height hack/
+	  	height: 124px;	/*IE6 min-height hack/
+	}
+		#galeria #content_main ul li img {
+			float: left;
+			margin: 0 18px 18px 0;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+		#galeria #content_main div.txt {margin-left: 98px;}
+		#galeria #content_main ul li h4 {
+			background: none;
+			padding: 9px 9px 0 0;
+			margin: 0 0 5px 12px;
+			color: #c60;
+			font-weight: normal;
+			font-size: 1.166em;
+		}
+		#galeria #content_main ul li p {
+			font-size: 1em;
+			margin: 0 12px 0em 12px;
+		}
+		#galeria #content_main ul li div {
+			background: none;
+			margin: 0;
+			padding: 0;
+		}*/
+
+#galeria .info_galeria{
+	background: #e0e0e0 url(images/bg_album.jpg) 10px no-repeat;
+	height: 150px;
+	padding:20px;
+
+}
+
+	#content_main div.info_galeria h4{
+		background: none;
+		font-size: 20px;
+		padding: 0px;
+		margin-bottom: 5px;
+	}
+	#content_main div.info_galeria span.mostrant{
+		font-weight: bold;
+	}
+
+	#galeria .info_galeria img{
+		padding: 20px 10px 10px 48px;
+		float:left;
+		width:161px;
+		height: 105px;
+		margin-right: 40px;
+	}
+#galeria #content_main {
+	width: 900px;
+}
+
+#content_main ul.galeria {
+	margin: 0;
+	padding: 30px;
+}
+
+#content_main ul.galeria li {
+	background: none;
+	float: left;
+	display: inline;
+	padding: 5px;
+	padding-bottom: 0px;
+	margin: 6px;
+	list-style: none;
+	height: 197px;
+}
+
+#content_main ul.galeria p {
+	margin-top: 10px;
+	font-size: 12px;
+}
+#content_main ul.galeria li p,
+#content_main ul.galeria li a,
+#content_main ul.galeria li ul,
+#content_main ul.galeria li img{
+	border-bottom: 0px;
+	margin:0px;
+}
+
+#content_main ul.galeria li ul li{
+	background: url(images/llistat_nivell_1.gif) 0px 5px no-repeat;
+	display: block;
+	float: left;
+	font-size: 11px;
+	color: #000;
+	border-bottom: none;
+	padding:0px;
+	margin:0px;
+	height: 70px;
+
+}
+
+#content_main ul.galeria li ul li p.titolimatge{
+	font-weight: bold;
+	padding-left: 10px;
+	font-size: 11px;
+	width: 170px;
+}
+#content_main ul.galeria li ul li p.titolimatge span.resum{
+	font-size: 11px;
+	font-weight: normal;
+	padding: 0;
+}
+/* #galeria #content_main {margin-left: 221px;}*/
+
+/*---------------
+llistat persones
+---------------------------------------------*/
+#content_main table.taula-persones {
+	/*border: 1px #999 solid;	*/
+}
+#content_main table.taula-persones tr.tableizer-firstrow{
+	background-color: #4B4B4B;
+	color: white;
+	margin-bottom: 5px;
+}
+#content_main table.taula-persones tr.tableizer-firstrow th{
+	font-weight: bold;
+	padding-left: 10px;
+	border-bottom: 5px #fff solid;
+	border-right: 5px #fff solid;
+}
+#content_main table.taula-persones tr td{
+	padding: 8px;
+	margin: 0px;
+	border: 0px;
+}
+#content_main table.taula-persones tr.fons {
+	background-image: url('images/bg_persones.gif');
+	background-repeat: repeat-y;
+}
+
+/*---------------
+content_sub
+---------------------------------------------*/
+div.caixeta {margin: 0 0 1.125em;}
+	div.caixeta a:link,
+	div.caixeta a:visited {
+		border: none;
+		background: none;
+	}
+	div.caixeta a:focus,
+	div.caixeta a:active {outline: 1px dotted #000;}
+/*box*/
+div.box {
+	margin: 0 0 1.125em;
+	padding: 1em 1em 10px;
+	background: #ddeccb url(images/bg_caixa_lateral_t.gif) no-repeat;
+	border: 1px solid #78b131;
+	position: relative;
+
+
+}
+	div.box span {
+		position: absolute;
+		width: 181px;
+		left: -1px;
+	}
+		div.box span.t {
+			height: 11px;
+			top: -1px;
+			background: url(images/box_t.gif) no-repeat;
+		}
+		div.box span.b {
+			height: 10px;
+			bottom: -1px;
+			background: url(images/box_b.gif) 0 100% no-repeat;
+		}
+	div.box h2 {
+		font-size: 15px;
+		margin: 0 0 .5em 0;
+		padding-bottom: .5em;
+		color: #6ba743;
+		font-family: Arial, Verdana, sans-serif;
+		border-bottom: 1px dotted #666;
+		font-weight:bold;
+	}
+	div.contacte h2 {
+		font-size: 15px;
+		margin: 0 0 1.6em 0.9em;
+		padding-bottom: .5em;
+		color: #6ba743;
+		font-family: Arial, Verdana, sans-serif;
+		border-bottom: 1px dotted #666;
+		font-weight:bold;
+	}
+	div.box p {
+		font-size: 11px;
+		margin: 0 0 .5em 0;
+	}
+	div.box li {
+		font-size: .8125em;
+		margin: 0 0 .5em 0;
+		padding: 0 0 .5em 15px;
+		background: url(images/kland_llista_box.gif) 0 .5em no-repeat;
+		border-bottom: 1px dotted #666;
+	}
+		div.box li:last-child {border-bottom: none;}
+
+	/*box contacte*/
+	div.contacte {background: #ddeccb url(images/bg_caixa_lateral_t.gif) no-repeat; margin-top: 30px;}
+		div.contacte h2 {
+			padding: 0;
+			margin-left: 65px;
+			border: none;
+		}
+		div.contacte span.pict {
+			background: url(images/pict_contacte.gif) no-repeat;
+			width: 64px;
+			height: 63px;
+			left: 6px;
+			top: -12px;
+
+		}
+
+
+	/*box contacte recerca*/
+	div.recerca img{
+			padding: 10px 0 10px 60px;
+
+		}
+
+
+	/*box vincles*/
+	div.vincles {
+		font-size: 0.81em;
+	}
+	div.vincles h2 {
+		border: none;
+		padding: 0;
+	}
+		div.vincles li {
+			background: url(images/kland_llista_box_vincles.gif) 0 .5em no-repeat;
+			padding-left: 20px;
+			border-bottom: 1px solid #ccc;
+		}
+	div.vincles li.titol, div.vincles ul.adjunts li.titol {
+		background: none;
+		padding-left: 0px;
+		text-align: right;
+		font-weight: bold;
+		color: #6A6A6A;
+	}
+	div.vincles ul.adjunts li {
+		background: url(images/ico_clips.gif) 0 .5em no-repeat;
+		padding-left: 20px;
+		border-bottom: 1px solid #ccc;
+	}
+
+	/*box calendari*/
+	div.calendari {
+		border: none;
+		background: #5c9b59 url(images/bg_box_calendari.jpg) repeat-x;
+	}
+		div.calendari span.t {
+			height: 5px;
+			background-image: url(images/box_calendari_t.gif);
+			left: 0;
+			top: 0;
+		}
+		div.calendari span.b {
+			height: 7px;
+			background-image: url(images/box_calendari_b.gif);
+			left: 0;
+			bottom: 0;
+		}
+		div.calendari h2 {
+			border: none;
+			padding: 0;
+		}
+		div.calendari table {
+			border-collapse: collapse;
+			width: 100%;
+		}
+			div.calendari table caption {
+				font-size: .6875em;
+				font-weight: bold;
+				color: #fff;
+				border: 1px solid #fff;
+				border-width: 1px 0;
+				padding: .5em 0;
+				overflow: hidden;
+			}
+				div.calendari table caption span {
+					position: static;
+					width: 115px;
+					display: block;
+					float: left;
+				}
+				div.calendari table caption a {
+					display: inline-block;
+					height: 17px;
+					border: none;
+					background: none;
+				}
+					div.calendari table caption a.anterior {float: left;}
+					div.calendari table caption a.seguent {float: right;}
+			div.calendari table th,
+			div.calendari table td {
+				font-size: .625em;
+				color: #fff;
+				text-align: center;
+				font-weight: bold;
+			}
+			div.calendari table td.avui {border: 1px solid #fff;}
+			div.calendari table th {
+				font-weight: normal;
+				padding-top: 1em;
+			}
+			div.calendari table td a:link,
+			div.calendari table td a:visited {
+				color: #fc0;
+				border: none;
+			}
+			div.calendari table td a:focus,
+			div.calendari table td a:active {
+				outline: 1px dotted #000;
+				background: none;
+			}
+	/*box recull de premsa*/
+	.premsa div.box h2 {margin: 0;}
+	.premsa div.box li {
+		font-weight: bold;
+		margin: 0;
+		padding: .8em 0 .8em 30px;
+		background: url(images/kland_premsa.png) 5px .5em no-repeat;
+		border-bottom: 1px solid #fff;
+	}
+		.premsa div.box li:last-child {border-bottom: none;}
+		.premsa div.box li a:link,
+		.premsa div.box li a:visited {
+			color: #fc0;
+			border: none;
+		}
+		.premsa div.box li a:hover {border-bottom: 1px dotted #fc0;}
+
+	/*box destacat*/
+	div.box_dest {
+		border: 1px solid #cdcdcd;
+		position: relative;
+		padding: 40px 15px;
+		margin: 0 0 1.125em;
+		font-size: 12px;
+		font-weight: bold;
+
+	}
+		div.box_dest span {
+			position: absolute;
+			display: block;
+			height: 37px;
+			width: 181px;
+		}
+			div.box_dest span.t {
+				background: url(images/box_dest_t.gif) no-repeat;
+				left: -1px;
+				top: -1px;
+			}
+			div.box_dest span.b {
+				background: url(images/box_dest_b.gif) 0 100% no-repeat;
+				left: -1px;
+				bottom: -1px;
+			}
+		div.box_dest p {
+			font-family: Arial, Verdana, sans-serif;
+			font-size: 1.125em;
+			z-index: 10;
+		}
+
+/*---------------
+site_info
+---------------------------------------------*/
+#site_info{
+	padding-top: 10px;
+}
+#site_info ul#altres {
+	background: #e96508 url(images/ombra_site_info.jpg) 0 100% repeat-x;
+	padding-bottom: 15px;
+	text-align: center;
+	padding: .8em 0 2em;
+
+}
+	#site_info ul#altres li {display: inline;}
+		#site_info ul#altres li a {
+			color: #fff;
+			background: url(images/kland_peu.gif) 0 50% no-repeat;
+			font-size: .75em;
+			padding-left: 10px;
+			margin: 0 .8em;
+		}
+#site_info p.vcard {
+	font-size: .625em;
+	text-align: center;
+	margin: 1em 0 3em;
+	height:20px;
+}
+#site_info h2 {
+	font-size: .6875em;
+	font-weight: bold;
+	margin: 0;
+	float: left;
+	margin: 0 0 0 3em;
+}
+
+#site_info ul.logos li {
+	display: inline;
+}
+	#site_info ul.logos li a {
+		display: block;
+		float: left;
+		margin: 0 1em 0;
+		border: none;
+		background: none;
+	}
+
+#site_info span.rss_peu {
+		background: url(images/bt_rss.jpg) no-repeat;
+		margin-left: 10px;
+		padding-left: 20px;
+		padding-bottom:5px;
+		height:20px;
+
+	}
+/*---------------
+portada
+---------------------------------------------*/
+/*#portada #nav {
+	background: #4b4b4b url(images/bg_nav_portada.jpg) 100% 100% no-repeat;
+	padding-bottom: 182px;
+}*/
+/*caixes*/
+#portada #content_main div {
+	float: left;
+	width: 29%;
+	margin: 0 2% 1.125em;
+	padding-bottom: 2em;
+	position: relative;
+}
+#portada #content_main div#noticies {
+	width: 62%;
+	/*max-height: 320px;*/
+}
+
+#portada #content_main div#noticies ul {
+	margin:0;
+	padding:0;
+}
+	#portada #content_main div#noticies li {
+		width: 47%;
+		float: left;
+		background: none;
+		padding: 0;
+		font-size: 11px;
+		margin: 0 15px 5px 0;
+		border-bottom: 1px #ccc dotted;
+		height: 125px;
+	}
+
+	#portada #content_main div#noticies li.noline{
+		border-bottom: 0;
+	}
+
+	#portada #content_main div#noticies li p {
+		font-size: 11px;
+	}
+	#portada #content_main div h2 {
+		margin: 0 0 .5em;
+		/*font-size: 1.125em;
+		font-size: 0.9375em;*/
+		color: #c60;
+		text-transform: uppercase;
+		font-weight: bold;
+		font-family: Arial, Helvetica, Verdana, sans-serif;
+		letter-spacing: -.05em;
+	}
+	#portada #content_main div h3.summary {
+		margin: 0 0 .5em;
+		padding: 0;
+		font-size: 11px;
+		font-weight: bold;
+		background: none;
+		font-family: Verdana, sans-serif;
+	}
+	#portada #content_main div h3.summary a {
+		color: #333;
+		border: none;
+	}
+		#portada #content_main div h3.summary a:link {
+			color: #333;
+			border: none;
+		}
+		#portada #content_main div h3.summary a:hover {
+			border-bottom: 1px #333 dotted;
+		}
+		#portada #content_main div h3.summary a:focus,
+		#portada #content_main div h3.summary a:active {
+			color: #fff;
+			border: none;
+		}
+	#portada #content_main div p {
+		margin: 0 0 .75em;
+		/*font-size: 0.6875em;*/
+		line-height: 1.5em;
+	}
+		#portada #content_main div p.data {
+			color: #5c9b59;
+		}
+		#portada #content_main div#activitats{
+			/*max-height: 320px;*/
+		}
+		#portada #content_main div#activitats p.data {
+			padding-bottom: 10px;
+			border-bottom: 1px #ccc dotted;
+		}
+		#portada #content_main div#activitats p.noline{
+			border-bottom: 0;
+		}
+		#portada #content_main div p em {
+			color: #5c9b59;
+			font-style: normal;
+		}
+		/*Tot + rss*/
+		#portada #content_main div div {
+			border-top: 1px solid #999;
+			width: 100%;
+			margin: 0;
+			padding: .5em 0 0;
+			position: absolute;
+			left: 0;
+			bottom: 0;
+		}
+			#portada #content_main div div p {
+				font-size: .6875em;
+				margin: 0;
+			}
+				#portada #content_main div div p a {
+					border: none;
+					background: url(images/kland_fletxaverda.gif) 0 50% no-repeat;
+					padding: 0 0 0 10px;
+					float: left;
+				}
+				#portada #content_main div p.rss a {
+					background-image: url(images/bt_rss.jpg);
+					padding-left: 22px;
+					position: absolute;
+					right: 0;
+					top: .7em;
+				}
+				#portada #content_main div p.rss_portada a {
+					/*background-image: url(images/rss.jpg);*/
+					background:none;
+					position: absolute;
+					right: 0;
+					top: .7em;
+					text-decoration:none;
+				}
+				#portada #content_main div p.rss_portada a:hover{
+					border:none
+				}
+				#portada #content_main div p a:visited {
+					color: #c60;
+				}
+				#portada #content_main div p a:hover {
+					border-bottom: 1px dotted #c60;
+				}
+				#portada #content_main div p a:focus,
+				#portada #content_main div p a:active {
+					border-bottom: none;
+					outline: 1px dotted #000;
+					color: #c60;
+				}
+
+		#portada #flash {
+			width: 940px;
+			height: 182px;
+			margin: 0;
+			padding: 0;
+		}
+/*caixetes*/
+
+#sub #content_main div.comp-horitzontal,
+#portada #content_main div.comp-horitzontal {
+	clear: left;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+	#sub #content_main div.comp-horitzontal p.image,
+	#portada #content_main div.comp-horitzontal p.image {
+		display: inline;
+		padding: 0;
+	}
+		#sub #content_main div.comp-horitzontal p.image a,
+		#portada #content_main div.comp-horitzontal p.image a {
+			display: inline;
+			float: left;
+			width: 29%;
+			margin: 0 2%;
+			text-align: center;
+			border: none;
+			overflow: hidden;
+			background: none;
+		}
+		/*#portada #content_main div.comp-horitzontal p.image a:focus,
+		#portada #content_main div.comp-horitzontal p.image a:active {outline: 1px dotted #000;}*/
+
+/*caixetes 2n nivell*/
+
+		#sub #container_main div.comp-horitzontal p.image a {
+			margin-top: 25px;
+			margin-bottom: 25px;
+			margin-left: 30px;
+			width: 181px;
+		}
+
+#content_main div .comp-vertical{
+	margin-left: auto;
+	margin-right: auto;
+	width:181px;
+}
+
+
+
+/*---------------
+subportada
+---------------------------------------------*/
+#sub #container_sub h2 {margin-right: 20px;}
+	#sub #container_sub h2.caixeta{
+		margin:0px;
+		padding:0px;
+		border: none;
+		position:relative;
+		top: -15px;
+		height: 33px;
+	}
+	#sub #container_sub h2.caixeta_recerca{
+		margin:0px;
+		padding:0px;
+		border: none;
+		position:relative;
+		top: -40px;
+		height: 36px;
+	}
+	#sub #container_sub ul li h2.caixeta_recerca a:link,
+	#sub #container_sub ul li h2.caixeta_recerca a:visited,
+	#sub #container_sub ul li h2.caixeta_recerca a:active,
+	#sub #container_sub ul li h2.caixeta_recerca a:focus,
+	#sub #container_sub ul li h2.caixeta_recerca a:hover,
+	#sub #container_sub ul li h2.caixeta a:link,
+	#sub #container_sub ul li h2.caixeta a:visited,
+	#sub #container_sub ul li h2.caixeta a:active,
+	#sub #container_sub ul li h2.caixeta a:focus,
+	#sub #container_sub ul li h2.caixeta a:hover{
+		border: none;
+		text-decoration:none;
+	}
+
+#sub #content_main ul {margin: 0 20px 10px;}
+	#sub #content_main ul li {
+		/*width: 138px;*/
+		width: 182px;
+		height: 10em;
+		padding: 140px 18px 0 18px;
+		margin: 0 3px;
+		float: left;
+		background-repeat: no-repeat;
+		position: relative;
+		cursor: pointer;
+	}
+
+		/* el creal */
+		#sub #content_main ul li#a {background-image: url(images/caixa_quefem.jpg);background-position: 0 -30px;padding: 105px 18px 0 18px;height:115px;}
+		#sub #content_main ul li#b {background-image: url(images/caixa_quisom.jpg);background-position: 0 -30px;padding: 105px 18px 0 18px;height:115px;}
+		#sub #content_main ul li#c {background-image: url(images/caixa_organs.jpg);background-position: 0 -30px;padding: 105px 18px 0 18px;height:115px;}
+		#sub #content_main ul li#d {background-image: url(images/caixa_colabora.jpg);background-position: 0 -10px;padding: 125px 18px 0 18px;height:135px;}
+		#sub #content_main ul li#e {background-image: url(images/caixa_publica.jpg);background-position: 0 -10px;padding: 125px 18px 0 18px;height:135px;}
+		#sub #content_main ul li#f {background-image: url(images/caixa_benvinguda.jpg);background-position: 0 -30px;padding: 105px 18px 0 18px;height:115px;}
+
+		/*
+		#sub #content_main ul li#a.es {background-image: url(images/creal_quefem-es.jpg);}
+		#sub #content_main ul li#b.es {background-image: url(images/creal_quisom-es.jpg);}
+		#sub #content_main ul li#c.es {background-image: url(images/creal_organs-es.jpg);}
+		#sub #content_main ul li#d.es {background-image: url(images/creal_colabora-es.jpg);}
+		#sub #content_main ul li#e.es {background-image: url(images/creal_publica-es.jpg);}
+		#sub #content_main ul li#f.es {background-image: url(images/creal_benvinguda-es.jpg);}
+
+		#sub #content_main ul li#a.en {background-image: url(images/creal_quefem-en.jpg);}
+		#sub #content_main ul li#b.en {background-image: url(images/creal_quisom-en.jpg);}
+		#sub #content_main ul li#c.en {background-image: url(images/creal_organs-en.jpg);}
+		#sub #content_main ul li#d.en {background-image: url(images/creal_colabora-en.jpg);}
+		#sub #content_main ul li#e.en {background-image: url(images/creal_publica-en.jpg);}
+		#sub #content_main ul li#f.en {background-image: url(images/creal_benvinguda-en.jpg);}
+
+
+		/* programes de recerca */
+		#sub #content_main ul li#a-recerca {background-image: url(images/caixa_cancer.jpg);background-position: 0 -30px;padding: 90px 18px 0 18px;height: 12em;}
+		#sub #content_main ul li#b-recerca {background-image: url(images/caixa_respira.jpg);background-position: 0 -30px;padding: 90px 18px 0 18px;height: 12em;}
+		#sub #content_main ul li#c-recerca {background-image: url(images/caixa_infancia.jpg);background-position: 0 -30px;padding: 90px 18px 0 18px;height: 12em;}
+		#sub #content_main ul li#d-recerca {background-image: url(images/caixa_contamina.jpg);background-position: 0 -30px;padding: 90px 18px 0 18px;height: 12em;}
+		#sub #content_main ul li#e-recerca {background-image: url(images/caixa_contamina_aigua.jpg);background-position: 0 -30px;padding: 90px 18px 0 18px;height: 12em;}
+		#sub #content_main ul li#f-recerca {background-image: url(images/caixa_radiacions.jpg);background-position: 0 -30px;padding: 90px 18px 0 18px;height: 12em;}
+		#sub #content_main ul li#g-recerca {background-image: url(images/caixa_programes.jpg);background-position: 0 -30px;padding: 90px 18px 0 18px;height: 12em;}
+
+		/*
+		#sub #content_main ul li#a-recerca.es {background-image: url(images/recerca_cancer-es.jpg);background-position: 0 -30px;padding: 100px 18px 0 18px;height: 12em;}
+		#sub #content_main ul li#b-recerca.es {background-image: url(images/recerca_respira-es.jpg);background-position: 0 -30px;padding: 100px 18px 0 18px;height: 12em;}
+		#sub #content_main ul li#c-recerca.es {background-image: url(images/recerca_infancia-es.jpg);background-position: 0 -30px;padding: 100px 18px 0 18px;height: 12em;}
+		#sub #content_main ul li#d-recerca.es {background-image: url(images/recerca_contamina-es.jpg);background-position: 0 -30px;padding: 100px 18px 0 18px;height: 12em;}
+		#sub #content_main ul li#e-recerca.es {background-image: url(images/recerca_contamina_aigua-es.jpg);background-position: 0 -30px;padding: 100px 18px 0 18px;height: 12em;}
+		#sub #content_main ul li#f-recerca.es {background-image: url(images/recerca_radiacions-es.jpg);background-position: 0 -30px;padding: 100px 18px 0 18px;height: 12em;}
+		#sub #content_main ul li#g-recerca.es {background-image: url(images/recerca_programes-es.jpg);background-position: 0 -30px;padding: 100px 18px 0 18px;height: 12em;}
+
+		#sub #content_main ul li#a-recerca.en {background-image: url(images/recerca_cancer-en.jpg);background-position: 0 -30px;padding: 100px 18px 0 18px;height: 12em;}
+		#sub #content_main ul li#b-recerca.en {background-image: url(images/recerca_respira-en.jpg);background-position: 0 -30px;padding: 100px 18px 0 18px;height: 12em;}
+		#sub #content_main ul li#c-recerca.en {background-image: url(images/recerca_infancia-en.jpg);background-position: 0 -30px;padding: 100px 18px 0 18px;height: 12em;}
+		#sub #content_main ul li#d-recerca.en {background-image: url(images/recerca_contamina-en.jpg);background-position: 0 -30px;padding: 100px 18px 0 18px;height: 12em;}
+		#sub #content_main ul li#e-recerca.en {background-image: url(images/recerca_contamina_aigua-en.jpg);background-position: 0 -30px;padding: 100px 18px 0 18px;height: 12em;}
+		#sub #content_main ul li#f-recerca.en {background-image: url(images/recerca_radiacions-en.jpg);background-position: 0 -30px;padding: 100px 18px 0 18px;height: 12em;}
+		#sub #content_main ul li#g-recerca.en {background-image: url(images/recerca_programes-en.jpg);background-position: 0 -30px;padding: 100px 18px 0 18px;height: 12em;}
+		*/
+
+		#sub #content_main ul li h3 {
+			background: none;
+			text-transform: uppercase;
+			font-size: 1.25em;
+			padding: 0;
+			margin: 90px 0 1em;
+			letter-spacing: -0.5em;
+			line-height: normal;
+		}
+
+		#sub #content_main ul li ul {margin: 0;}
+			#sub #content_main ul li ul li {
+				width: auto;
+				height: auto;
+				padding: 0 0 0 12px;
+				margin: auto;
+				float: none;
+				position: static;
+			}
+		#sub #content_main ul li p {
+			font-size: 1em;
+			margin-bottom: .5em;
+		}
+		#sub #content_main ul li p a {
+			border: none;
+			background: none;
+			position: absolute;
+			right: 18px;
+			bottom: 18px;
+		}
+			#sub #content_main ul li p a:focus,
+			#sub #content_main ul li p a:active {outline: 1px dotted #000;}
+
+			/* caixetes / banners
+			#sub #content_main p.image {
+				float: right;
+				margin-right: 15px;
+			} */
+			#sub #content_main .banneresq {float: left; margin-left: 30px;}
+			#sub #content_main .bannerdre {float: right; margin-right: 30px;}
+			#sub #content_main p.image a.external {
+					border: none;
+					background: none;
+			}
+
+/*---------------
+mapa-web
+---------------------------------------------*/
+
+
+body#mapa-web div#content_main {
+	width: 90%;
+	padding-bottom: 30px;
+	margin-bottom: 30px;
+}
+
+body#mapa-web div.caixetaweb {
+	float:left;
+	width: 396px;
+	display:block;
+	background: #e6e6e6;
+	margin: 10px;
+	margin-bottom: 10px;
+
+}
+	body#mapa-web div.caixetaweb ul{
+		width:100%;
+	}
+	body#mapa-web div.caixetaweb h3{
+		background: #E96508;
+		color: #FFF;
+		padding: 10px;
+		font-weight: normal;
+	}
+	body#mapa-web div.caixetaweb a{
+		color:#FFF;
+		border: none;
+	}
+	body#mapa-web div.caixetaweb ul li a{
+		color:#E96508;
+	}
+
+body#mapa-web div.estaticmapaweb {
+	float:left;
+	width: 396px;
+	display:block;
+	margin: 0px 10px 5px 10px;
+
+}
+	body#mapa-web div.estaticmapaweb a{
+		color:#FFF;
+		border: none;
+	}
+
+	body#mapa-web div.estaticmapaweb h3{
+		background: #7CB42B;
+		color: #FFF;
+		padding: 10px;
+		font-weight: normal;
+	}
+body#mapa-web div.editoramapaweb {
+	float:left;
+	width: 396px;
+	display:block;
+	margin: 0px 10px 5px 10px;
+
+}
+	body#mapa-web div.editoramapaweb h3{
+		background: #E96508;
+		color: #FFF;
+		padding: 10px;
+		font-weight: normal;
+	}
+
+body#mapa-web div#content_main table{
+	border-spacing: 0px;
+}
+body#mapa-web div#content_main table tr td {
+	border: 5px white solid;
+
+}
+body#mapa-web table tr td.principal a, body#mapa-web table tr td.editores ul li a {
+	color: white;
+	border-bottom: 1px white dotted;
+}
+body#mapa-web table tr td.principal a:hover, body#mapa-web table tr td.editores ul li a:hover {
+	color: white;
+	border-bottom: 1px #ccc dotted;
+}
+body#mapa-web table tr td.principal {
+	background: #E96508;
+	color: white;
+	font-size: 12px;
+	width: 360px;
+}
+body#mapa-web table tr td.secundari {
+	background: #E6E6E6;
+	font-size: 12px;
+	width: 200px;
+}
+body#mapa-web table tr td.secundari ul li, body#mapa-web table tr td.editores ul li{
+	font-size: 12px;
+}
+
+body#mapa-web table tr td.editores {
+	padding: 0px;
+	margin: 0px;
+	width: 200px;
+
+}
+body#mapa-web table tr td.editores ul li {
+	background: #7CB42B;
+	color: white;
+	padding: 12px;
+}
+body#mapa-web table tr td.editores ul.altres li {
+	background: #7CB42B;/*#E96508;*/
+	color: white;
+	padding: 12px;
+}
+body#mapa-web table tr td.editores ul li a {
+	background-image: none;
+	color: white;
+	font-size: 12px;
+	padding: 0px;
+	margin: 0px;
+}
+
+/* cercador */
+
+.cerca-capcelera {
+	border-top: 1px #ccc solid;
+	border-bottom: 1px #ccc solid;
+	margin: 20px 0;
+	padding: 0px;
+	height: 20px;
+}
+body#noticies #content_main ul.cerca_sutgeriment li {
+	font-size: 12px;
+	border-bottom: none;
+	background: url('images/llistat_nivell_1.gif');
+	background-repeat: no-repeat;
+	background-position: 0 8px;
+	margin-left: 30px;
+	padding-left: 15px;
+}
+
+
+/*---------------
+òrgans de governcontent_main
+---------------------------------------------*/
+
+#galeria #content_main h3 {
+	background: none;
+	padding: 0;
+	color: #6ba743;
+}
+div #res_publicacions div.vcard{
+	background: url(images/bg_cac.jpg) repeat-y;
+	margin-left:10px;
+	float:left;
+	margin-bottom: 10px;
+	width: 100%;
+	padding: 10px 0 10px 10px;
+}
+	div #res_publicacions div.vcard div.info{
+		float:left;
+		width:40%;
+		margin-left:10px;
+		height:100%;
+	}
+	div #res_publicacions div.vcard img.foto{
+		float:left;
+		padding:10px;
+		border:1px solid #cbcbcb;
+	}
+	div #res_publicacions div.vcard div.curri{
+		border-left: 1px dotted #999;
+		float:left;
+		vertical-align:middle;
+		padding:0 10px 0 0;
+		padding-left: 10px;
+	}
+	div #res_publicacions div.vcard h4{
+		background: none;
+		padding:5px 0 0;
+		margin:0px;
+}
+#content_main div.vcard h4{
+	background: none;
+	padding:5px 0 10px 10px;
+	margin:0px;
+	color: #c60;
+}
+body#organs #content_main div.vcard {
+	background: url(images/bg_cac.jpg) repeat-y;
+	margin-left:10px;
+	float:left;
+	margin-bottom: 10px;
+	width: 100%;
+	padding: 10px 0 10px 10px;
+}
+	body#organs #content_main li{
+		background: none;
+		list-style: none;
+		width: 310px;
+		float: left;
+		height: 150px;
+		margin-right: 10px;
+	}
+	body#organs #content_main div.vcard img {
+		float: left;
+		margin: 0 18px 0 0;
+		padding:10px;
+		border:1px solid #cbcbcb;
+	}
+	body#organs #content_main div.vcard h4 {
+	/*	display: block;*/
+		background: url(images/bg_cac.jpg) repeat-y;
+		padding: 9px 9px 0 0;
+		margin: 0 0 5px 12px;
+		color: #c60;
+		font-weight: normal;
+	}
+body#organs #content_main div.vcard p {margin: 0 12px .3em 12px;}
+body#organs #content_main div.president { height: 120px;}
+
+
+/*---------------
+PUBLICACIONS I USUARIS
+---------------------------------------------*/
+
+body#publicacions #content_main {
+	width: 900px;
+}
+
+/* FORMULARI part web */
+div#form_cercausuaris,
+div#form_publicacions {
+	background: url(images/pict_lupa.jpg);
+	background-position: top left;
+	background-repeat: no-repeat;
+	height: 180px;
+	padding-left: 183px;
+}
+div#form_cercausuaris{
+	background: url(images/cercador_persones.jpg);
+	background-position: top left;
+	background-repeat: no-repeat;
+}
+div#form_cercausuaris table,
+div#form_publicacions table {
+	width: 600px;
+}
+div#form_cercausuaris table tr td,
+div#form_publicacions table tr td {
+	border-bottom: 0;
+	padding: 10px;
+	width: 391px;
+}
+div#form_cercausuaris form input,
+div#form_publicacions form input {
+	width: 340px;
+	background: url(images/bg_area_linia.png);
+	background-repeat: repeat-x;
+	border: 1px #ccc solid;
+	font-size: 11px;
+	padding: 4px;
+}
+div#form_cercausuaris form select,
+div#form_publicacions form select {
+	width: 350px;
+	background: url(images/bg_area_linia.png);
+	background-repeat: repeat-x;
+	border: 1px #ccc solid;
+	font-size: 11px;
+	padding: 4px;
+}
+div#form_cercausuaris form select option,
+div#form_publicacions form select option {
+	background: white;
+}
+
+div#form_cercausuaris form .bt,
+div#form_publicacions form .bt {
+	width: 102px;
+	float: right;
+	border: 0;
+	background: none;
+}
+
+/* FORMULARI part intranet*/
+
+/*div#form_publicacions_intranet table {
+		width: 700px;
+}
+	div#form_publicacions_intranet table table{
+		width: 310px;
+	}
+		div#form_publicacions_intranet table table tr td {
+			padding: 0;
+			margin: 0;
+			border: 0;
+		}*/
+
+/* camps
+div#form_publicacions_intranet form select {
+	width: 200px;
+	border: 1px #ccc solid;
+}
+div#form_publicacions_intranet form #titol {
+	width: 510px;
+}
+
+div#form_publicacions_intranet form input {
+	border: 1px #ccc solid;
+}
+	div#form_publicacions_intranet form .inst {
+		border: 0;
+
+	}
+div#form_publicacions_intranet form input.bt {
+	border: 0;
+	padding-top: 7px;
+}
+
+#form_publicacions_intranet .enviar {
+	text-align: right;
+}
+	#form_publicacions_intranet .enviar input {
+		width: 102px;
+		border: 0;
+	}*/
+
+/* LLISTAT RESULTATS PUBLICACIONS */
+
+#res_publicacions {
+	margin-left: 180px;
+	margin-top: -70px;
+}
+
+body.fitxa #container_sub #content_main div.userp div#info_usuaris ul{
+	padding-left:0px;
+	margin-left:0px;
+}
+body.fitxa #container_sub #content_main div.userp div#info_usuaris ul li strong,
+body.fitxa #container_sub #content_main div.userp div#info_usuaris ul li{
+	background:none;
+	margin:0px;
+	padding:0px;
+	padding-left:0px;
+}
+
+#res_publicacions div.mostrant {
+	border-bottom: 1px #ccc dotted;
+	margin-bottom: 10px;
+	clear: both;
+}
+	#res_publicacions div.mostrant strong {
+		color: #c60;
+	}
+
+/* navegació pàgines */
+body#publicacions #container_sub #content_main #res_publicacions div.mostrant p,
+body#publicacions #container_sub #content_main #res_publicacions ul {
+	font-size: 11px;
+}
+body#publicacions #container_sub #content_main #res_publicacions #navegacioPagines {
+	border-bottom: 1px #ccc solid;
+	padding: 13px 0 10px 0;
+	margin-bottom: 10px;
+}
+body#publicacions #container_sub #content_main #res_publicacions #navegacioPagines ul li{
+	padding-left: 0;
+	margin-left: 5px;
+}
+	body#publicacions #container_sub #content_main #res_publicacions #navegacioPagines ul li a,
+	body#publicacions #container_sub #content_main #res_publicacions #navegacioPagines ul li.actual{
+		padding-left: 5px;
+	}
+
+/** **/
+
+/* navegació pàgines */
+body#publicacions #container_sub #content_main #res_publicacions .navegacioPagines {
+	border-bottom: 1px #ccc solid;
+	padding: 13px 0 10px 0;
+	margin-bottom: 10px;
+}
+body#publicacions #container_sub #content_main #res_publicacions .navegacioPagines ul li{
+	padding-left: 0;
+	margin-left: 5px;
+}
+	body#publicacions #container_sub #content_main #res_publicacions .navegacioPagines ul li a,
+	body#publicacions #container_sub #content_main #res_publicacions .navegacioPagines ul li.actual{
+		padding-left: 5px;
+	}
+
+/** **/
+
+
+#res_publicacions ul.llistat_publicacions {
+	clear: both;
+}
+#res_publicacions ul.llistat_publicacions li{
+	background-image: url(images/ico_publicacio.png);
+	background-position: 10px 10px;
+	background-repeat: no-repeat;
+	padding: 10px 10px 10px 55px;
+	min-height: 50px;
+	height: expression( this.scrollHeight < 49 ? "50px" : "auto" );
+	/* sets min-height for IE */
+}
+
+#res_publicacions ul.llistat_publicacions li.fons_gris {
+	 background-color: #EFF0EE;
+}
+#res_publicacions ul.llistat_publicacions .veure_abstract {
+	background-image: url(images/kland_fletxaverda.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	text-align: right;
+	margin-right: 15px;
+	margin-top: 10px;
+	padding-right: 15px;
+	font-size: 11px;
+	/*padding: 10px 0;*/
+}
+#loader {
+	height: 20px;
+	margin-top: 20px;
+}
+#loader img{
+	/*margin-left: 140px;*/
+}
+
+
+/** RSS **/
+div#content_main.rss li, div#content_main.rss h3
+{
+	list-style-type:none;
+	list-style-image:none;
+	background: none;
+}
+
+div#content_main.rss ul.RSS_legend
+{
+	list-style-type:none;
+	list-style-image:none;
+	margin-left:1em;
+	height:1.5em;
+}
+
+	div#content_main.rss ul.RSS_legend li
+	{
+		float:left;
+		margin: .5em 2% .5em 0;
+		width:auto;
+	}
+		div#content_main.rss ul.RSS_legend li a:hover
+		{
+			background-color:transparent;
+			color:#242E57;
+
+		}
+
+		div#content_main.rss ul.RSS_legend li.rss, #contingut ul.RSS_legend li a.rss
+		{
+			background:url(../comu/icones/ico_rss.gif) no-repeat 0 50%;
+			padding:0 0 0 18px;
+		}
+		div#content_main.rss ul.RSS_legend li.bloglines
+		{
+			background:url(../comu/icones/01bloglines.gif) no-repeat 0 50%;
+			padding:0 0 0 15px;
+			margin-left:1em;
+		}
+		div#content_main.rss ul.RSS_legend li.google
+		{
+			background:url(../comu/icones/02google.gif) no-repeat 0 50%;
+			padding:0 0 0 18px;
+			margin-left:1em;
+		}
+		div#content_main.rss ul.RSS_legend li.yahoo
+		{
+			background:url(../comu/icones/03yahoo.gif) no-repeat 0 50%;
+			padding:0 0 0 18px;
+			margin-left:1em;
+		}
+		div#content_main.rss ul.RSS_legend li.live
+		{
+			background:url(../comu/icones/Wlive.jpg) no-repeat 0 50%;
+			padding:0 0 0 25px;
+			margin-left:1em;
+		}
+		div#content_main.rss ul.RSS_legend li.netvibes
+		{
+			background:url(../comu/icones/netvibes.gif) no-repeat 0 50%;
+			padding:0 0 0 18px;
+			margin-left:1em;
+		}
+	div#content_main.rss ul.RSS_legend img
+	{
+		margin:0 0 0 .5em;
+	}
+
+
+
+div#content_main.rss ul.duesCol
+{
+	list-style-type:none;
+	list-style-image:none;
+	margin-left:0;
+	margin-bottom:180px;
+}
+	div#content_main.rss ul.duesCol li
+	{
+		float: left;
+		width: 45%;
+		margin: 0 2% 10px 0;
+	}
+		div#content_main.rss ul.duesCol li ul.RSS_legend li
+		{
+			list-style-type:none;
+			list-style-image:none;
+			width:auto;
+		}
+
+
+div#content_main.rss a.rss {
+		background:url('../comu/icones/icon_rss_16.gif') no-repeat left 50%;
+		padding-left: 2.2em;
+		}
+
+/* USUARIS */
+
+
+div#info_usuaris {
+		clear:both;
+		margin-bottom: 20px;
+}
+	div#info_usuaris ul {
+			margin:0;
+			padding: 0 0 10px 0;
+	}
+
+	div#content_main h5.recerca,
+	div#info_usuaris ul li {
+			background: none;
+			border-top: 1px solid #cbcbcb;
+			margin:0;
+			padding: 0;
+			font-size: 16px;
+			color: #6ba743;
+			padding-top: 20px;
+			font-weight: lighter;
+	}
+
+		div#info_usuaris a{
+				font-size: 11px;
+				font-family: Verdana, Arial, sans-serif;
+				font-weight: normal;
+		}
+
+
+div.box h2.titolrecerca {
+	font-size: 13.5px;
+}
+
+.noline{
+	border-bottom: 0;
+}
+
+
+
+div .treballa{
+	background: #ddeccb url(images/bg_caixa_lateral_t.gif) no-repeat;
+	/*background: #e7e7e7 url('images/imatge_curriculum.jpg')  10px 10px no-repeat;*/
+	padding: 0px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+
+}
+div .treballa div#text{
+	padding-left:70px;
+	border-bottom: 1px dotted gray;
+	height: 70px;
+	background: url('images/imatge_curriculum.gif') 10px no-repeat;
+	font-size: 15px;
+	color: #6ba743;
+	font-weight: bold;
+}
+	div.caixeta div.treballa span#text{
+
+		border-bottom: 1px solid #cbcbcb;
+		background-color:#FFF;
+
+	}
+	div.caixeta div.treballa img{
+
+		clear:both;
+
+	}
+	div.caixeta div.treballa a{
+		margin-left:38px;
+		border: none;
+		background: none;
+	}
+
+
+
+#portada #content_main div h2#titolnot{
+	margin-bottom: 40px;
+}
+
+#portada #content_main div h2#titolact{
+	margin-bottom: 40px;
+}
+
+span#icoact{
+	background: url('images/ico_home_agenda.png') no-repeat;
+	padding: 32px 32px 32px 32px;
+	position: absolute;
+	left: 110px;
+	top: -5px;
+}
+
+span#iconot{
+	background: url('images/ico_home_noticies.png') no-repeat;
+	padding: 32px 46px 32px 46px;
+	position: absolute;
+	left: 80px;
+	top: -5px;
+}
+
+div#portada div#content_main div#noticies ul#llistanot{
+	padding-bottom: 0px;
+}
+
+
+/* CAIXA D'IMPACTE MEDIATIC DE LES NOTÍCIES */
+
+div #content_main .informe_impacte_gris,
+div #content_main .informe_impacte {
+	background-color:#E6E6E6;
+	margin-bottom: 20px;
+}
+div #content_main .crealeta{
+	background:#FFF;
+	display:block;
+	float:left;
+	width:700px;
+
+}
+	div #content_main .informe_impacte_gris a:hover,
+	div #content_main .informe_impacte a:hover{
+		background-color: transparent;
+
+	}
+	div #content_main .informe_impacte_gris h2,
+	div #content_main .informe_impacte h2 {
+		background: url('../comu/bg_titol_impacte.jpg') repeat-x left bottom;/*#F0F0F0;*/
+		padding: 0em;
+		font-size: 12px;
+		font-weight: normal;
+		margin: 0 0 1em 0;
+		color: #333;
+		border:none;
+		text-decoration:none;
+		width:100%;
+
+	}
+	div #content_main .informe_impacte_gris h2 {
+		background: url('../comu/bg_titol_impacte_gris.jpg') repeat-x left bottom;
+		color: #666;
+	}
+		div #content_main .informe_impacte_gris h2 span,
+		div #content_main .informe_impacte h2 span {
+			margin: 0 1em;
+			display: block;
+		}
+		div #content_main .informe_impacte_gris h2 a,
+		div #content_main .informe_impacte h2 a.desplegable {
+			font-weight: bold;
+			color: #fff;
+			background-color: transparent;
+			display: block;
+			background: url('../comu/obrir_desplegable.jpg') no-repeat 98% 50%;
+			border:none;
+			padding:.6em  1em;
+		}
+		div#content_main h2 a.nodesplegable{
+			background:none;
+			font-weight: bold;
+			color: #fff;
+			background-color: transparent;
+			display: block;
+			border:none;
+			padding:.6em  1em
+		}
+		div #content_main .informe_impacte_gris h2 a{
+			background: url('../comu/obrir_desplegable_gris.gif') no-repeat 98% 50%;
+			color: #666;
+		}
+		div #content_main .informe_impacte_gris h2 a.amagar{
+			background-image: url('../comu/tancar_desplegable_gris.gif');
+		}
+
+		div #content_main .informe_impacte h2 a.amagar {
+			background-image: url('../comu/tancar_desplegable.jpg');
+		}
+div #content_main .informe_impacte div {
+	padding: 0 1em 1em;
+}
+	div #content_main .informe_impacte div a{
+		background:none;
+	}
+	div #content_main .informe_impacte div ul li{
+		font-size: 11px;
+		margin-bottom: .5em;
+	}
+
+
+/*FINANÇADORS*/
+div #content_main #divfinancadors{
+	display:block;
+	clear:right;
+	float:left;
+	padding:0px;
+	margin:0px;
+}
+	div#content_main #divfinancadors p{
+		float:left;
+		padding:0px;
+		margin:0px;
+	}
+	div#content_main #divfinancadors div.text{
+		float:left;
+		padding:0px;
+		margin:0px;
+		padding-left:0px;
+		clear:left;
+	}
+	div #content_main #divfinancadors div.text ul{
+		padding:0px;
+		margin:0px;
+
+	}
+
+	div #content_main ul#dades_projecte li #divfinancadors div.text ul li{
+		float:none;
+		width: 100%;
+		border:0px;
+		padding:0px;
+		margin:0px;
+	}
+
+	div #content_main #divfinancadors div.text ul li a{
+		border:0px;
+		padding:0px;
+		background:none;
+	}
+
+
+/*POSTERS CIENTIFICS*/
+div#content_main #pcientifics{
+	float:left;
+	width: 170px;
+	margin-top:30px;
+
+}
+	div#content_main #pcientifics a{
+		border: 0;
+		text-decoration: none;
+		background: none;
+	}
+
+
+/*THICKBOX DE LES IMATGES DE LA GALERIA*/
+#amplia{
+	width: 500px;
+	height: 300px;
+	background: #FFF;
+}
+
+#amplia #container_main{
+	width: 500px;
+	height: 300px;
+}
+
+#galeria a{
+	font-size: 11px;
+	border:0px;
+}
+#galeria #imageDetails p{
+	font-size: 11px;
+	width: 400px;
+}
+#galeria #imageDetails strong{
+	color: #666;
+	padding-left: 10px;
+	font-weight: bold;
+	background: url(images/llistat_nivell_1.gif) 0px 3px no-repeat;
+}
+
+/*DADES DELS PROJECTES*/
+
+body.fitxa #container_sub #content_main ul#dades_projecte{
+	background:#e0e0e0;
+	width: 670px;
+	padding: 10px 10px 0px 10px;
+	margin-left:0px;
+	margin-bottom: 20px;
+	clear: both;
+	display:block;
+}
+	body.fitxa #container_sub #content_main ul#dades_projecte li{
+		float:left;
+		border-left: 1px dotted #666;
+		background: none;
+		padding-bottom:5px;
+		margin-bottom:0px;
+	}
+
+	body.fitxa #container_sub #content_main li.lidurada{
+		width:15%;
+		background: none;
+	}
+	body.fitxa #container_sub #content_main li.licoordinador{
+		width:20%;
+		background: none;
+	}
+	body.fitxa #container_sub #content_main li.lifinanciacio{
+		width:15%;
+		background: none;
+	}
+	body.fitxa #container_sub #content_main li.lifinancador{
+		width:40%;
+	}
+
+
+/* Ex-sabàtics */
+body#noticies #container_sub #content_main ul#exsabatics{
+	width: 699px;
+	padding:0px;
+	margin:0px;
+}
+body#noticies #container_sub #content_main ul#exsabatics li{
+	padding:0px 15px 0px 15px;
+	width:100%;
+	border-left: 1px dotted #666;
+	margin-bottom:20px;
+	display:block;
+	border-bottom: none;
+
+}
+	body#noticies #container_sub #content_main ul#exsabatics li div.dades{
+		float:left;
+		display:block;
+		padding-right: 15px;
+		margin-right: 10px;
+		width: 288px;
+	}
+
+		body#noticies #container_sub #content_main ul#exsabatics li div.dades img,
+		body#noticies #container_sub #content_main ul#exsabatics li div.dades div.dades_text
+		{
+			float:left;
+		}
+		body#noticies #container_sub #content_main ul#exsabatics li div.dades div.dades_text div.categoria,
+		body#noticies #container_sub #content_main ul#exsabatics li div.dades div.dades_text,
+		body#noticies #container_sub #content_main ul#exsabatics li div.dades h3{
+			padding:0px 0px 0px 0px;
+			margin:0px 0px 0px 0px;
+		}
+		body#noticies #container_sub #content_main ul#exsabatics li div.dades div.dades_text div.categoria{
+			color: #666;
+			font-size:12px;
+		}
+	body#noticies #container_sub #content_main ul#exsabatics li div.opinio_destacada{
+		float:left;
+		display:block;
+		width: 310px;
+		padding-left:50px;
+		font-size: 12px;
+		background: url(images/box_dest_negre_t.gif) 0px 0px no-repeat;
+		border-left: 1px dotted #666;
+
+	}
+	body#noticies #container_sub #content_main ul#exsabatics li span.opinio_tanca{
+		float:right;
+		display:block;
+		width: 32px;
+		height:25px;
+		position:absolute;
+		bottom:0px;
+		right: 30px;
+		background: url(images/dest_a_br.jpg) 0px 0px no-repeat;
+	}
+
+#lightbox-secNav-btnClose{ position:relative; top:0px; height:40px; float: right; width: 17px;}
+#lightbox-secNav-btnClose a{ background: none;}
+
+
+#content_main ul.separada{
+	background: none;
+	float:left;
+	padding-left: 60px;
+	clear: right;
+	display:block;
+	width: 100%;
+	background: url(images/bus.gif) no-repeat;
+	margin:0px;
+
+}
+
+#content_main ul.separada li{
+	background: none;
+}
+
+
+/*GALERIA IMATGES AMPLIADES */
+body#amplia{
+	width:400px;
+	padding:15px 0px 20px 0px;
+	border:none;
+	font-size: 11px;
+	color:#666;
+	margin: 0px auto 0px auto;
+}
+body#amplia div#container_main{
+	width:400px;
+	margin:0px;
+	padding:0px;
+	border:none;
+
+}
+body#amplia div#container_main ul{
+	padding-top:10px;
+
+}
+	body#amplia div#container_main ul li{
+		background: url(images/llistat_nivell_1.gif) 0px 5px no-repeat;
+		padding-left: 13px;
+		margin: 0 0 .5em;
+	}
+	body#amplia div#container_main img{
+		padding:0px;
+		margin:0px;
+	}
+body#amplia div#txt{
+	float: left;
+	display:block;
+	width:400px;
+}
+body#amplia div#tanca{
+	float: right;
+	display:block;
+	width: 70px;
+	padding: 0px 0px 10px 0px;;
+}
+body#amplia a{
+	color: #cc6600;
+	font-weight:bold;
+	background:none;
+}
+
+/* CERCADOR */
+
+ul#cercador {
+	margin-left: 20px;
+}
+	ul#cercador li{
+		background: url(images/llistat_nivell_1.gif) 0px 5px no-repeat;
+		padding-left: 13px;
+		margin: 0 0 .5em;
+	}
