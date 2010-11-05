@@ -1,7 +1,16 @@
 Mccspain::Application.routes.draw do
+  # pag estáticas
   match '/home', :to => 'pages#home'
   
+  # root
   root :to => 'pages#home'
+
+  # resources
+  resources :pages do
+    collection do
+      get 'download_file'
+    end
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
